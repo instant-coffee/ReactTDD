@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Appointment, AppointmentDayView } from "../src/Appointment";
+import { Appointment, AppointmentsDayView } from "../src/Appointment";
 import { act } from "react-dom/test-utils";
 
 describe("Appointment", () => {
@@ -26,7 +26,7 @@ describe("Appointment", () => {
   });
 });
 
-describe("AppointmentDayView", () => {
+describe("AppointmentsDayView", () => {
   let container;
   beforeEach(() => {
     container = document.createElement("div");
@@ -38,8 +38,16 @@ describe("AppointmentDayView", () => {
   };
 
   it("renders a div with the right id", () => {
-    render(<AppointmentDayView appointments={[]} />);
+    render(<AppointmentsDayView appointments={[]} />);
 
     expect(document.querySelector("div#appointmentsDayView")).not.toBeNull();
+  });
+
+  it("renders an ol element to display appointments", () => {
+    render(<AppointmentsDayView appointments={[]} />);
+
+    const listElement = document.querySelector("ol");
+
+    expect(listElement).not.toBeNull();
   });
 });
