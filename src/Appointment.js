@@ -9,5 +9,6 @@ export const AppointmentsDayView = ({ appointments }) => (
         <li key={appointment.startsAt}>{timeToHours(appointment.startsAt)}</li>
       ))}
     </ol>
+    <p>There are no appointments scheduled for today.</p>
   </div>
 );
