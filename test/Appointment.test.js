@@ -67,4 +67,22 @@ describe("AppointmentsDayView", () => {
     const listItems = document.querySelectorAll("ol > li");
     expect(listItems).toHaveLength(2);
   });
+
+  it("renders the time of each appointment", () => {
+    const today = new Date();
+
+    const twoAppointments = [
+      { startsAt: today.setHours(12, 0) },
+
+      { startsAt: today.setHours(13, 0) },
+    ];
+
+    render(<AppointmentsDayView appointments={twoAppointments} />);
+
+    const listItems = document.querySelectorAll("li");
+
+    expect(listItems[0].textContent).toEqual("12:00");
+
+    expect(listItems[1].textContent).toEqual("13:00");
+  });
 });
