@@ -32,9 +32,11 @@ describe("AppointmentsDayView", () => {
   const appointments = [
     {
       startsAt: today.setHours(12, 0),
+      client: { firstName: "Jonas" },
     },
     {
       startsAt: today.setHours(13, 0),
+      client: { firstName: "Karl" },
     },
   ];
 
@@ -85,4 +87,12 @@ describe("AppointmentsDayView", () => {
       "There are no appointments scheduled for today."
     );
   });
+
+  it("selects the first appointment by default", () => {
+    render(<AppointmentsDayView appointments={appointments} />);
+
+    expect(document.body.textContent).toContain("Jonas");
+  });
 });
+
+
