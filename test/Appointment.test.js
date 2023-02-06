@@ -10,16 +10,16 @@ describe("Appointment", () => {
     document.body.replaceChildren(container);
   });
 
-  it("renders the customer first name", () => {
-    const customer = { firstName: "Ashley" };
-    const component = <Appointment customer={customer} />;
+  it("renders the client first name", () => {
+    const client = { firstName: "Ashley" };
+    const component = <Appointment client={client} />;
 
     act(() => ReactDOM.createRoot(container).render(component));
     expect(document.body.textContent).toContain("Ashley");
   });
-  it("renders the customer first name", () => {
-    const customer = { firstName: "Jimbo" };
-    const component = <Appointment customer={customer} />;
+  it("renders the client first name", () => {
+    const client = { firstName: "Jimbo" };
+    const component = <Appointment client={client} />;
 
     act(() => ReactDOM.createRoot(container).render(component));
     expect(document.body.textContent).toContain("Jimbo");
