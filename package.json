@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack"
+    "build": "webpack",
+    "format": "prettier --write {src,test}/*",
+    "lint": "eslint {src,test}/**/*"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +25,9 @@
     "jest-environment-jsdom": "^29.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "prettier": {
+    "printWidth": 54
   },
   "jest": {
     "testEnvironment": "jsdom",
